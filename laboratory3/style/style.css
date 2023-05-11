@@ -4,9 +4,9 @@ body {
   color: white;
 }
 h1,h2 {
+  font-family: 'Roboto', sans-serif;
   text-align: right;
   color: red;
-  font-family: arial;
 }
 em {
   color: green;
@@ -20,7 +20,11 @@ em {
     color: black;   
 }
   h1, h2{
+    
     color: black;  
   }
 title {display:none;}
+}
+strong {
+  font-family: 'Caveat', cursive;
 }
