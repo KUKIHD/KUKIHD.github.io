@@ -12,11 +12,11 @@ function pow(x,n){
   }
 }
 
-function sumTo(x){
-  if (x == 1){
+function sumTo(n){
+  if (n == 1){
     return 1;
   }
   else {
-    return x + sumTo(x - 1);
+    return n + sumTo(n - 1);
   }
 }
