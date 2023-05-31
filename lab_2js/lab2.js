@@ -49,3 +49,15 @@ function fib(n){
         return y;
   }
 }
+
+function compare(x,y){
+  if (x == y){
+    return null;
+  }
+  if (x > y){
+    return false
+  }
+  if (x < y){
+    return true
+  }
+}
