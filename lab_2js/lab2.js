@@ -29,3 +29,23 @@ function factorial(n){
     return BigInt(n) * factorial(n - 1);
   }
 }
+
+function fib(n){
+  let x = 0n;
+  let y = 1n;
+  if (n == 0){
+    return x;
+  }
+  else if (n == 1){
+    return y
+  }
+  else{
+    for (let j = 2; j <= n; j++) {
+            let c = x + y;
+            x = y;
+            y = c;
+        }
+
+        return y;
+  }
+}
