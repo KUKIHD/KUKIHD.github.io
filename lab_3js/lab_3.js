@@ -1,66 +1,57 @@
 "use strict";
 
-function getDecimal(num) {
-  return Math.abs(num) % 1;
+import {
+    fib
+} from './lab_2.js';
+
+export function getDecimal(num) {
+    if (Math.trunc(num) == num) return 0;
+    else if (num < 0) return num - (-Math.ceil(-num));
+    if (num > 1) return +(num - Math.trunc(num)).toFixed(2);
 }
 
-function ucFirst(str) {
-  if (!str) {
-    return str;
-  } else {
-    return str[0].toUpperCase() + str.slice(1);
-  }
+export function ucFirst(str) {
+    if (!str) return str;
+    else {
+        let NewStr = str[0].toUpperCase() + str.slice(1);
+        return NewStr;
+    }
 }
 
-function checkSpam(str) {
-  let lowerStr = str.toLowerCase();
-  
-  return lowerStr.includes('viagra') || lowerStr.includes('xxx');
-}
-function truncate(str, maxlength) {
-  if (str.length > maxlength) {
-    return str.slice(0, maxlength - 1) + '…';
-  } else {
-    return str;
-  }
-}
-function camelize(str) {
-  let words = str.split('-');
-  
-  for (let i = 1; i < words.length; i++) {
-    words[i] = ucFirst(words[i]);
-  }
-  
-  return words.join('');
+export function checkSpam(str) {
+    let NewStr = str.toLowerCase(); //перевод к нижнему регистру
+    return NewStr.includes('viagra') || NewStr.includes('xxx');
 }
 
-function fib(n){
-  let x = 0n;
-  let y = 1n;
-  if (n == 0){
-    return x;
-  }
-  else if (n == 1){
-    return y
-  }
-  else{
-    for (let j = 2; j <= n; j++) {
-            let c = x + y;
-            x = y;
-            y = c;
-        }
-
-        return y;
-  }
+export function truncate(str, maxlength) {
+    if (str.length < maxlength) return str;
+    else return str.slice(0, maxlength - 1) + '…';
 }
 
-function arrReverseSorted(arr) {
-  let sortedArr = arr.slice().sort((a, b) => b - a);
-  
-  return sortedArr;
+export function camelize(str) {
+    let STR = str.split("-");
+    let StrNew = "";
+    for (let i = 0; i <= STR.length - 1; i++) {
+        if (i == 0) StrNew = STR[0];
+        else StrNew += ucFirst(STR[i]);
+    }
+    return StrNew;
 }
-function unique(arr) {
-  let set = new Set(arr);
-  
-  return Array.from(set);
+
+export function fibs(n) {
+    let arr = [];
+    for (let i = 0; i < n; i++) arr.push(fib(i));
+    return arr;
+}
+
+export function arrReverseSorted(arr) {
+    return arr.sort(function (a, b) {
+        return b - a;
+    });
+}
+
+export function unique(arr) {
+    let set = new Set();
+    for (let i in arr) set.add(arr[i]);
+    return Array.from(set);
 }
