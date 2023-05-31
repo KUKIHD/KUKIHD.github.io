@@ -20,3 +20,12 @@ function sumTo(n){
     return n + sumTo(n - 1);
   }
 }
+
+function factorial(n){
+  if (n == 0){
+    return 1n;
+  }
+  else{
+    return BigInt(n) * factorial(n - 1);
+  }
+}
