@@ -33,7 +33,7 @@ function camelize(str) {
   
   return words.join('');
 }
-import { fib } from './lab2.js';
+import { fib } from 'lab_2js/lab_2.js';
 function fibs(n) {
   let result = [];
   
