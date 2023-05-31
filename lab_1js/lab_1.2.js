@@ -11,7 +11,4 @@ else if (num >= 2 && num <= 4){
 else if (num >= 5){
   massage = `На ветке сидит ${num} ворон`;
 }
-else {
-  massage = `На ветке сидит не понятно что сидит :)`;
-}
 alert(massage);
