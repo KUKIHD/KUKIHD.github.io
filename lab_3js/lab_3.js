@@ -33,16 +33,27 @@ function camelize(str) {
   
   return words.join('');
 }
-import { fib } from 'lab_2js/lab_2.js';
-function fibs(n) {
-  let result = [];
-  
-  for (let i = 0; i < n; i++) {
-    result.push(fib(i));
+
+function fib(n){
+  let x = 0n;
+  let y = 1n;
+  if (n == 0){
+    return x;
   }
-  
-  return result;
+  else if (n == 1){
+    return y
+  }
+  else{
+    for (let j = 2; j <= n; j++) {
+            let c = x + y;
+            x = y;
+            y = c;
+        }
+
+        return y;
+  }
 }
+
 function arrReverseSorted(arr) {
   let sortedArr = arr.slice().sort((a, b) => b - a);
   
