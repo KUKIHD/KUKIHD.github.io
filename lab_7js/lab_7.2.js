@@ -23,5 +23,4 @@ function onInputBlur(e) {
   if (input.value === '') 
     input.value = placeholderText; 
     input.classList.add('placeholder');
-  }
 }
