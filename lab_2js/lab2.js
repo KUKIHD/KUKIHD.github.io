@@ -73,6 +73,7 @@ function fib(n){
  * @param {number} x Первый аргумент.
  * @param {number} y Второй аргумент.
  * @return {function} Функция, которая вернет true, false или null.
+ */
 function compare(x){
   return function (y){
     if (x == y){
