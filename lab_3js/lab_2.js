@@ -30,7 +30,7 @@ function factorial(n){
   }
 }
 
-function fib(n){
+export function fib(n){
   let x = 0n;
   let y = 1n;
   if (n == 0){
