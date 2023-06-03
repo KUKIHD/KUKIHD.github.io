@@ -1,7 +1,6 @@
 'use strict';
 
-let num1 = prompt("Количество ворон");
-num = Number(num1);
+let num1 = +prompt("Количество ворон");
 if (num == 1){ 
   alert(`На ветке сидит ${num} ворона`);
 }
