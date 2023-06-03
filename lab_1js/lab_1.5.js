@@ -1,13 +1,12 @@
 'use strict';
 
-let num = prompt("Введите число");
+let num = +prompt("Введите число");
 let num1 = ("dog dog dog cat cat dog");
 let num2 = ("dog dog cat cat dog dog");
 let num3 = ("dog cat cat dog dog dog");
 let num4 = ("cat cat dog dog dog cat");
 let num5 = ("cat dog dog dog cat cat");
 let num0 = 1;
-let num6 = Number(num);
 do {
   if (num0 % 5 == 1){
     console.log(num1)
@@ -25,4 +24,4 @@ do {
     console.log(num5)
   }
   num0 = num0 + 1;
-} while (num0 <= num6)
+} while (num0 <= num)
