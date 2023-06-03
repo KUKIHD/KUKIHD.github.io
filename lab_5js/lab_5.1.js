@@ -1,6 +1,6 @@
 const head = document.head;
 const ul = document.querySelector('ul');
-const lil = ul.querySelectorAll('li');
+const liList = ul.querySelectorAll('li');
 console.log(head)
 console.log(ul)
-console.log(lil)
+console.log(liList)
