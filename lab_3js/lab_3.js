@@ -64,6 +64,17 @@ export function camelize(str) {
     return StrNew;
 }
 /**
+ * Возвращает массив, заполненный числами Фибоначчи до n-го числа (не включая его).
+ * @param {number} n натуральноее число, количество чисел Фибоначчи.
+ * @return {Array} arr, массив с числами Фибоначчи.
+ */
+export function  fibs(n){
+    let arr = [];
+    for (let i = 0; i < n; i++) arr.push(fib(i));
+    return arr;
+}
+
+/**
  * Возвращает массив из элементов, отсортированный по убыванию.
  * @param {Arr} arr массив элементов.
  * @return {Arr} arr, массив, отсортированный по убыванию.
