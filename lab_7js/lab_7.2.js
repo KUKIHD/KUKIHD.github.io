@@ -1,17 +1,15 @@
-let input = document.querySelector('input[data-placeholder]');
-    let div = document.querySelector('div');
-
-    input.value = input.getAttribute('data-placeholder');
-
-    input.onfocus = function () {
-      div.innerHTML = input.getAttribute('data-placeholder');
-      input.setAttribute('data-placeholder', '');
-      input.value = '';
-    };
-
-    input.onblur = function () {
-      input.setAttribute('data-placeholder', div.innerHTML);
-      div.innerHTML = '';
-      input.value = input.getAttribute('data-placeholder');
-    };
-
+'use strict';
+let tf = document.getElementById("hhh");
+let input = tf.getElementsByTagName("input")[0];
+let lb = tf.getElementsByTagName("label")[0];
+lb.style.display = "none";
+input.setAttribute("placeholder", input.dataset.placeholder); //setAttribute добавляет атрибут или изменяет значение существующего атрибута в выбранном элементе.
+lb.innerHTML = input.dataset.placeholder;
+input.addEventListener("blur", function () {
+lb.style.display = "none";
+input.setAttribute("placeholder", input.dataset.placeholder);
+});
+input.addEventListener("focus", function () { //addEventListener устанавливает функцию, которая будет вызываться всякий раз, когда указанное событие доставляется цели
+lb.style.display = "block";
+input.setAttribute("placeholder", "");
+});
