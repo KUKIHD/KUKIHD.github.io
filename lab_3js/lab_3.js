@@ -23,8 +23,8 @@ export function getDecimal(num) {
 export function ucFirst(str) {
     if (!str) return str;
     else {
-        let NewStr = str[0].toUpperCase() + str.slice(1);
-        return NewStr;
+        let newstr = str[0].toUpperCase() + str.slice(1);
+        return newstr;
     }
 }
 
@@ -34,8 +34,8 @@ export function ucFirst(str) {
  * @return {number} true, если строка str содержит 'viagra' или 'XXX', а иначе false.
  */
 export function checkSpam(str) {
-    let NewStr = str.toLowerCase();
-    return NewStr.includes('viagra') || NewStr.includes('xxx');
+    let newstr = str.toLowerCase();
+    return newstr.includes('viagra') || newstr.includes('xxx');
 }
 
 /**
@@ -55,13 +55,13 @@ export function truncate(str, maxlength) {
  * @return {str} StrNew, преобразованная строка.
  */
 export function camelize(str) {
-    let STR = str.split("-");
-    let StrNew = "";
-    for (let i = 0; i <= STR.length - 1; i++) {
-        if (i == 0) StrNew = STR[0];
-        else StrNew += ucFirst(STR[i]);
+    let str = str.split("-");
+    let strnew = "";
+    for (let i = 0; i <= str.length - 1; i++) {
+        if (i == 0) strnew = str[0];
+        else strnew += ucFirst(str[i]);
     }
-    return StrNew;
+    return strnew;
 }
 /**
  * Возвращает массив, заполненный числами Фибоначчи до n-го числа (не включая его).
