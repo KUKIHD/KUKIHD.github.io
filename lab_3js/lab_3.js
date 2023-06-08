@@ -54,7 +54,7 @@ export function truncate(str, maxlength) {
  * @param {str} str Проверяемая строка.
  * @return {str} strwew, преобразованная строка.
  */
-export function camelize(str) {
+export function camelize(str1) {
     let str1 = str1.split("-");
     let strnew = "";
     for (let i = 0; i <= str1.length - 1; i++) {
