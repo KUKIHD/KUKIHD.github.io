@@ -1,29 +1,34 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title>data-placeholder</title>
+
     <style>
-     .placeholder {
-  color: #80a1f2;
-}
+       .placeholder::-webkit-input-placeholder {
+            color: rgb(19, 33, 234);
+        }
+
+       
     </style>
+
 </head>
 
 <body>
-    <input type="name" data-placeholder="name" class='placeholder' id="sss" />
-    
-   <script>
-'use strict';
+    <form id="hhh">
+        <label for="sss"></label>
+        <input type="name" data-placeholder="name" class='placeholder' id="sss" />
+    </form>
+    <script>
+        'use strict';
         let tf = document.getElementById("hhh");
 
         let input = tf.getElementsByTagName("input")[0];
         let lb = tf.getElementsByTagName("label")[0];
         lb.style.display = "none";
 
-        input.setAttribute("placeholder", input.dataset.placeholder); 
+        input.setAttribute("placeholder", input.dataset.placeholder); //setAttribute добавляет атрибут или изменяет значение существующего атрибута в выбранном элементе.
         lb.innerHTML = input.dataset.placeholder;
 
         input.addEventListener("blur", function () {
@@ -31,13 +36,11 @@
             input.setAttribute("placeholder", input.dataset.placeholder);
         });
 
-        input.addEventListener("focus", function () {
+        input.addEventListener("focus", function () { //addEventListener устанавливает функцию, которая будет вызываться всякий раз, когда указанное событие доставляется цели
             lb.style.display = "block";
             input.setAttribute("placeholder", "");
         });
     </script>
-
-
 </body>
 
 </html>
