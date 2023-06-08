@@ -1,26 +1,17 @@
-var placeholders = document.querySelectorAll('[data-placeholder]');
-for (var i = 0; i < placeholders.length; i++) {
-  var input = placeholders[i];
-  var placeholderText = input.getAttribute('data-placeholder'); 
-  input.value = placeholderText; 
-  input.classList.add('placeholder'); 
-  input.addEventListener('focus', onInputFocus); 
-  input.addEventListener('blur', onInputBlur); 
-}
+let input = document.querySelector('input[data-placeholder]');
+    let div = document.querySelector('div');
 
-function onInputFocus(e) {
-  var input = e.target;
-  var placeholderText = input.getAttribute('data-placeholder');
-  if (input.value === placeholderText) { 
-    input.value = ''; 
-  }
-  input.classList.remove('placeholder');
-}
+    input.value = input.getAttribute('data-placeholder');
 
-function onInputBlur(e) {
-  var input = e.target;
-  var placeholderText = input.getAttribute('data-placeholder');
-  if (input.value === '') 
-    input.value = placeholderText; 
-    input.classList.add('placeholder');
-}
+    input.onfocus = function () {
+      div.innerHTML = input.getAttribute('data-placeholder');
+      input.setAttribute('data-placeholder', '');
+      input.value = '';
+    };
+
+    input.onblur = function () {
+      input.setAttribute('data-placeholder', div.innerHTML);
+      div.innerHTML = '';
+      input.value = input.getAttribute('data-placeholder');
+    };
+
