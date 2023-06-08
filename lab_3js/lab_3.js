@@ -54,14 +54,14 @@ export function truncate(str, maxlength) {
  * @param {str} str Проверяемая строка.
  * @return {str} strwew, преобразованная строка.
  */
-export function camelize(str1) {
-    let str1 = str1.split("-");
-    let strnew = "";
-    for (let i = 0; i <= str1.length - 1; i++) {
-        if (i == 0) strnew = str[0];
-        else strnew += ucFirst(str1[i]);
-    }
-    return strnew;
+export function camelize(str) {
+  let words = str.split('-');
+  
+  for (let i = 1; i < words.length; i++) {
+    words[i] = ucFirst(words[i]);
+  }
+  
+  return words.join('');
 }
 /**
  * Возвращает массив, заполненный числами Фибоначчи до n-го числа (не включая его).
