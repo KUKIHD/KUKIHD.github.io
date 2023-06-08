@@ -52,14 +52,14 @@ export function truncate(str, maxlength) {
 /**
  * Дефисы в строке удаляются, а все слова после них получают заглавную букву.
  * @param {str} str Проверяемая строка.
- * @return {str} StrNew, преобразованная строка.
+ * @return {str} strwew, преобразованная строка.
  */
 export function camelize(str) {
-    let str = str.split("-");
+    let str1 = str1.split("-");
     let strnew = "";
-    for (let i = 0; i <= str.length - 1; i++) {
+    for (let i = 0; i <= str1.length - 1; i++) {
         if (i == 0) strnew = str[0];
-        else strnew += ucFirst(str[i]);
+        else strnew += ucFirst(str1[i]);
     }
     return strnew;
 }
